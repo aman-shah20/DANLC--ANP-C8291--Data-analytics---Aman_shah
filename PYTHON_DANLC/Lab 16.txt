@@ -1,0 +1,102 @@
+# 1. Suppose you have a dataset containing daily temperature readings for a city, and you
+want to identify days with extreme temperature conditions. Find days where the temperature either exceeded 35 degrees Celsius (hot day) or dropped below 5 degrees Celsius (cold day).
+
+Input:
+
+temperatures = np.array([32.5, 34.2, 36.8, 29.3, 31.0, 38.7, 23.1, 18.5, 22.8, 37.2])
+
+import numpy as np
+temperatures = np.array([32.5, 34.2, 36.8, 29.3, 31.0, 38.7, 23.1, 18.5, 22.8, 37.2])
+print("Hot Days:")
+Temperature = temperatures[(temperatures>35)]
+Day=np.argwhere(temperatures>35).flatten()
+df=dict((i,j) for i, j in zip(Day,Temperature))
+print("Day  Temperature")
+for key, value in df.items():
+    print(f"{key}     {value}")
+    
+
+print()
+
+temperatures = np.array([32.5, 34.2, 36.8, 29.3, -4, 38.7, 23.1, -18.5, 22.8, 37.2])
+print("Cold Days:")
+temperature = temperatures[(temperatures<5)]
+day=np.argwhere(temperatures<5).flatten()
+df2=dict((i,j) for i, j in zip(day,temperature))
+print("Day  Temperature")
+for key, value in df2.items():
+    print(f"{key}     {value}")
+    
+
+# 2. Suppose you have a dataset containing monthly sales data for a company, and you
+want to split this data into quarterly reports for analysis and reporting purposes.
+
+Input:
+
+monthly_sales = np.array([120, 135, 148, 165, 180, 155, 168, 190, 205, 198, 210, 225])
+
+monthly_sales = np.array([120, 135, 148, 165, 180, 155, 168, 190, 205, 198, 210, 225])
+splitted=np.split(monthly_sales,4)
+splitted
+count=1
+for i in splitted:
+    print(f"Quarter {count} sales (in thousand )")
+    print(i)
+    count+=1
+
+# 3. Suppose you have a dataset containing customer data, and you want to split this data
+into two groups: one group for customers who made a purchase in the last 30 days and another group for customers who haven't made a purchase in the last 30 days.
+
+Input:
+
+customer_ids = np.array([101, 102, 103, 104, 105, 106, 107, 108, 109, 110])
+
+last_purchase_days_ago = np.array([5, 15, 20, 25, 30, 35, 40, 45, 50, 55])
+
+customer_ids = np.array([101, 102, 103, 104, 105, 106, 107, 108, 109, 110])
+last_purchase_days_ago = np.array([5, 15, 20, 25, 30, 35, 40, 45, 50, 55])
+
+activeCust=np.argwhere(last_purchase_days_ago<=30).flatten()
+print("Active Customer (Last Purchase <= 30 days ago)")
+result=[]
+for i in activeCust:
+    result.append(customer_ids[i])
+print(result)
+
+print()
+
+inactiveCust=np.argwhere(last_purchase_days_ago>30).flatten()
+print("Active Customer (Last Purchase > 30 days ago)")
+result=[]
+for i in inactiveCust:
+    result.append(customer_ids[i])
+print(result)
+
+### 4.Suppose you have two sets of employee data—one containing information about
+full-time employees and another containing information about part-time employees. You want to combine this data to create a comprehensive employee dataset for HR analysi s. Inp
+
+.t:
+
+Employee data for full-time emplo
+yees full_time_employees = np.ar ray([ [101, 'John Doe', 'Full-Time', 5 5000], [102, 'Jane Smith', 'Full-Time', 60000], [103, 'Mike Johnson', 'Full-Time', 5 2.000] ])
+
+Employee data for part-time
+employees part_time_employees = np.array([ [201, 'Alice Brown', 'Part-Ti me', 25000], [202, 'Bob Wilson', 'Part-T ime', 28000], [203, 'Emily Davis', 'Part-Time', 22000] ])
+
+# Employee data for full-time employees
+full_time_employees = np.array([
+[101, 'John Doe', 'Full-Time', 55000],
+[102, 'Jane Smith', 'Full-Time', 60000],
+[103, 'Mike Johnson', 'Full-Time', 52000]
+])
+
+# Employee data for part-time employees
+part_time_employees = np.array([
+[201, 'Alice Brown', 'Part-Time', 25000],
+[202, 'Bob Wilson', 'Part-Time', 28000],
+[203, 'Emily Davis', 'Part-Time', 22000]
+])
+
+result=np.vstack((full_time_employees,part_time_employees))
+result
+

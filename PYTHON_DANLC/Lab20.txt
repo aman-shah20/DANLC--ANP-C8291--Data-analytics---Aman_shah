@@ -1,0 +1,115 @@
+# Visualize the daily temperature changes over time in a city and give your conclusion
+
+import matplotlib.pyplot as plt
+
+x = list(range(1, 32))
+y = [65, 68, 70, 72, 75, 76, 78, 80, 81, 79, 75, 72, 70, 68, 67, 69, 70, 73, 75, 76, 78,
+80, 81, 82, 83, 82, 80, 78, 76, 74, 71]
+
+plt.plot(x, y, color="blue")
+plt.xlabel("Days")
+plt.ylabel("Temperature")
+plt.title("Daily Temperature Over Month")
+plt.plot(x,y,marker="o")
+
+plt.show()
+
+
+
+
+# Create a line plot to visualize the daily closing prices of a stock over a year
+# and give your conclusion.
+
+import matplotlib.pyplot as plt
+
+x = list(range(1, 78))
+y = [100, 105, 110, 115, 112, 120,
+     118, 125, 128, 130, 132, 135,
+     138, 140, 142, 144, 145, 148,
+     150, 155, 160, 158, 162, 165,
+     170, 172, 175, 178, 180, 182,
+     185, 188, 190, 192, 195, 198,
+     200, 198, 195, 193, 190, 188,
+     185, 182, 180, 178, 175, 172,
+     170, 168, 165, 162, 160, 158,
+     155, 152, 150, 148, 145, 143,
+     140, 138, 135, 132, 130, 128,
+     125, 123, 120, 118, 115, 112,
+     110, 108, 105, 103, 100]
+
+plt.plot(x, y, color="blue")
+plt.xlabel("Days of the year")
+plt.ylabel("Stock Price(USD)")
+plt.title("Stock over a Year")
+plt.plot(x, y, marker="o")
+
+plt.show()
+
+
+
+
+
+
+
+# Create a bar chart to represent monthly expenses in different spending
+# categories and give your conclusion.
+
+import matplotlib.pyplot as plt
+
+x = ['Rent', 'Groceries', 'Utilities', 'Entertainment', 'Transportation']
+y = [1200, 400, 200, 150, 250]
+
+plt.bar(x, y, color='lightblue')
+plt.xlabel("Expense Category")
+plt.ylabel("Monthly Expenses(USD)")
+plt.title("Monthly Expense Breakdown")
+
+plt.show()
+
+
+
+
+
+
+# Create a histogram to represent the distribution of product prices in a retail
+# store and give your conclusion.
+
+import matplotlib.pyplot as plt
+
+product_prices = [24.99, 34.99, 49.99, 64.99, 39.99, 54.99, 79.99, 99.99, 29.99, 44.99,
+                  59.99, 69.99, 84.99, 109.99, 119.99, 89.99, 74.99, 124.99, 69.99, 54.99]
+
+plt.hist(product_prices, color="green", edgecolor='blue')
+plt.xlabel("Product Prices(USD)")
+plt.ylabel("Number of Products")
+plt.title("Distribution of Product Prices in a Retail Store ")
+plt.show()
+
+
+
+
+
+# Suppose I am a teacher, and I want to analyze the exam scores of my students
+# to understand how they performed on a recent math test. I have collected the exam
+# scores, and I want to create a histogram to visualize the distribution of scores.
+# [Note: You need to share the exam scores in list format. For eg.22,45,60,75,80]
+
+import matplotlib.pyplot as plt
+
+exam_scores = [22, 35, 40, 45, 60, 75, 80, 55, 70, 90, 85, 95]
+
+plt.hist(exam_scores, color='lightblue', edgecolor='red')
+plt.title('Distribution of Math Exam Scores')
+plt.xlabel('Scores')
+plt.ylabel('Number of Students')
+
+plt.show()
+
+
+
+
+
+
+
+
+
